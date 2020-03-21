@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register</title>
+    {% load static %}
+    <link rel = "styleSheet" type= "text/css" href="{% static 'EpunchCard/style.css' %}">
+</head>
+<body>
+    <div class = "wrapper">
+        <h2 id = "regTitle">Please Register</h2>
+        <div id = "reg">
+            <form  action = "/register" method = "POST">
+                {% csrf_token %}
+                <input type = "hidden" name = "person" value = "register">
+                <ul>
+                    <li><label for="name">Name:<input type="text" name="name" id="name"></label></li>
+                    <li><label for="email">Email:<input type="text" name="email" id="email"></label></li>
+                    <li><label for="password">Password:<input type="text" name="password" id="pass"></label></li>
+                    <li><label for="confirm_password">Confirm Password:<input type="text" name="confirm_password" id="confirm"></label></li>
+                    <button onclick= location.href="/" type="button">Back to login</button>
+                    <input type="submit" value="Submit">
+                </ul>
+                {% if messages %}
+                <ul class = flashes >
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</body>
+</html>

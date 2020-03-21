@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>GoEnigma</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<script type="text/javascript">
+    // When reload happens, scroll position stays the same
+    window.addEventListener('scroll',function() {
+            //When scroll change, you save it on sessionStorage.
+            sessionStorage.setItem('scrollPosition',window.scrollY);
+        },false);
+
+    window.addEventListener('load',function() {
+        if(sessionStorage.getItem('scrollPosition') !== null)
+        window.scrollTo(0, sessionStorage.getItem('scrollPosition'));
+    },false);
+</script>
+<body>
+    <div class = "container">
+        <a href="logOut">Log Off</a>
+        <div class = "row justify-content-center mt-3" >
+            <form role= "form" action = "/process" method = "POST">
+                {% csrf_token %}
+
+                <h3>New Input</h3>
+                <div class="form-group">
+                    <label for="title">Title:<input type="text" class="form-control" name="title" id="title"></label>
+                </div>
+                        
+                <div class="form-group">
+                    <label for="qA">Quote (Left):<input type="text"  class="form-control" name="qA" id="qA"></label>
+                </div>
+
+                <div class="form-group">
+                    <label for="qA">AuthorA (Left):<input type="text"  class="form-control" name="authorA" id="authorA"></label>
+                </div>
+
+                <div class="form-group">
+                    <label for="qA">AuthorB (Right:<input type="text"  class="form-control" name="authorB" id="authorB"></label>
+                </div>
+                <div class="form-group">
+                    <label for="qB">Quote (Right):<input type="text"  class="form-control" name="qB" id="qB"></label>
+                </div>
+                <div class="form-group">
+                    <label for="desc">Desc:<textarea rows="3"  class="form-control" name="desc" id="desc"></textarea></label>
+                </div>
+            
+                <input type="submit" value="Submit" id = "subButton">
+            </form>
+            <ul class= "list-group col-md-5 ml-5 mt-2">
+                <h3>Current Bio</h3>
+                <li class="list-group-item">Title:  {{title}}</li>
+                <li class="list-group-item">Author (Left):  {{authorA}}</li>
+                <li class="list-group-item">Quote (Left):  {{qA}}</li>
+                <li class="list-group-item">Quote (Right):  {{qB}}</li>
+                <li class="list-group-item">Author (Right):  {{authorB}}</li>
+                <li class="list-group-item">Description:  {{desc}}</li>
+            </ul>
+            {% if messages %}
+                <ul class = "list-group col-md-5 ml-5 mt-2">
+                    {% for message in messages %}
+                    <li class="alert alert-danger" role="alert" >{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

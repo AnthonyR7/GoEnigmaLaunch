@@ -1,0 +1,401 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+.wrapper{
+    width: 100% auto;
+    /* background: url("/main/apps/GoEnigma/static/GoEnigmaPics/sign.jpg"); */
+    /* background: url("/static/GoEnigmaPics/sign.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom center; */
+    margin: 0px auto;
+    overflow: hidden;
+   /* padding: 15px; */
+}
+.holder{
+    /* background: url("/main/apps/GoEnigma/static/GoEnigmaPics/sign.jpg"); */
+    background: url("/static/GoEnigmaPics/sign.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.titlePic{
+    display: flex;
+    /* justify-content: center; */
+    height: 350px; /* or other desired height */
+    /* overflow: hidden; */
+    width: 100%;
+}
+.titlePic img{
+    width: 100%;  
+}
+.profile p{
+    display: block;
+    font-size: 20px;
+}
+.profile{
+    display: inline-block;
+    overflow: auto;
+}
+
+.desc{
+    height: 400px;
+    text-align: center;
+    overflow-y: scroll;
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+
+}
+.desc::-webkit-scrollbar { /* WebKit - chrome and safari */
+    width: 0;
+    height: 0;
+}
+.desc #pic{
+    margin-top: 80px;
+    height: 250px;
+    width: 250px;
+    display: inline-flex;
+    border-radius: 50%;
+    overflow: hidden;
+    /* padding: 2px;
+    padding-top: 10px; */
+}
+.desc #pic img{
+    max-width: 100%;
+    max-height: 100%;
+}
+.desc p{
+    margin-top: 30px;
+}
+.content{
+    height: 0px auto;
+    width: 0px auto;
+    text-align: center;
+}
+#eQuote, #quote{
+    display: inline-block;
+    width: 300px;
+    height: 250px;
+    margin-bottom: 100px;
+    text-align: center;
+    vertical-align: top;
+    margin-top: 100px;
+    overflow-y: auto;
+}
+#eQuote h2, #quote h2{
+    margin-top: 20px;
+}
+#quote{
+    margin-left: 100px;
+}
+#eQuote{
+    margin-right: 100px;
+}
+#player{
+    height: 0px auto;
+    width: 500px;
+    display: inline-block;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+#nav ul{
+    list-style-type: none;
+    margin: 0;
+    /* padding-top: 50px; */
+    text-align: center;
+    display: inline-block;
+    /* overflow: hidden; */
+}
+#nav{
+    background-color: whitesmoke;
+}
+#graph{
+    height: 160px;
+    width: 800px;
+    /* background-color: red; */
+    margin-left: 300px;
+}
+ul li{
+    display: inline-block;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+#witnesses p{
+    margin-top: 5px;
+}
+ul li div{
+    display: inline-block;
+    height: 250px;
+    width: 350px;
+    background-color: black;
+    vertical-align: top;
+    overflow-y: auto;
+    white-space: initial;
+}
+ul li div p{
+    color: white;
+    font: bolder;
+}
+ul li div #imageBox{
+    
+    height: 100px;
+    width: 100px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+ul li div #imageBox img{
+    max-width: 100%;
+    max-height: 100%;
+}
+#links{
+    background-color: black;
+    height: 100% auto;
+    width: 100%;
+    display: block;
+}
+#links ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #30F9F3;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#links ul li{
+    display: inline-block;
+}
+/* Change the link color on hover */
+/* #links ul li a:hover {
+    background-color: #555;
+    color: white;
+} */
+/* Image Switch */
+a img:last-child {
+    display: none;  
+}
+a:hover img:last-child {
+    display: block;  
+}
+a:hover img:first-child {
+    display: none;  
+}
+#links ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    /* padding: 20px 95px; */
+    text-decoration: none;
+}
+#links ul li a img{
+    width: 50px;
+    height: 50px;
+}
+.navButtons{
+    position: absolute;
+    width: 1300px;
+    margin-bottom: 200px;
+    margin-left: 25px;
+}
+/* #left{
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    background-color: #ceaaaa;
+    padding: 5px;
+    cursor: pointer;
+    top: 10px;
+    font-weight: bold;
+    
+}
+#right{
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    background-color: #ceaaaa;
+    padding: 5px;
+    cursor: pointer;
+    top: 10px;
+    font-weight: bold;
+} */
+/* arrow */
+.arrow {
+    position: absolute;
+    top: 50%;
+    width: 3vmin;
+    height: 3vmin;
+    background: transparent;
+    border-top: 1vmin solid darkgray;
+    border-right: 1vmin solid darkgray;
+    box-shadow: 0 0 0 lightgray;
+    transition: all 200ms ease;
+  }
+.arrow.left {
+    left: 0;
+    -webkit-transform: translate3d(0, -50%, 0) rotate(-135deg);
+    transform: translate3d(0, -50%, 0) rotate(-135deg);
+}
+.arrow.right {
+    right: 0;
+    -webkit-transform: translate3d(0, -50%, 0) rotate(45deg);
+    transform: translate3d(0, -50%, 0) rotate(45deg);
+}
+.arrow:hover {
+    border-color: orange;
+    box-shadow: 0.5vmin -0.5vmin 0 yellow;
+}
+.arrow:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-40%, -60%) rotate(45deg);
+            transform: translate(-40%, -60%) rotate(45deg);
+    width: 200%;
+    height: 200%;
+}
+@media only screen and (min-width: 768px) and (max-width: 800px){
+    .titlePic{
+        display: flex;
+        height: 280px;
+    }
+    /* .desc{
+        position: relative;
+    } */
+    .profile{
+        margin-right: 3px;
+        width: 250px;
+        /* margin-left: 200px; */   
+    }
+    .profile p{
+        font-size: 18px;
+    }
+    #graph{
+        background-color: red;
+        margin-left: 110px;
+        width: 560px;
+    }
+    #eQuote, #quote{
+        /* vertical-align: none;
+        margin-top: none; */
+        width: 235px;
+        height: 170px;
+    }
+    #eQuote h2, #quote h2{
+        font-size: 20px;
+        display: flex;
+    }
+    #eQuote{
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 10px;
+        position: absolute;
+        display: block;
+    }
+    #quote{
+        position: absolute;
+        margin-left: 10px;
+    }
+    ul li{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    #player{
+        width: 700px;
+    }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 414px){
+    
+    .titlePic{
+        display: block;
+        height: 100px;
+    }
+    .profile{
+        padding-top: 10px;
+    }
+    .profile p{
+        margin-top: initial;
+    }
+    #eQuote, #quote{
+        width: 150px;
+        height: 130px; 
+        margin-top: 15px;
+    }
+    #eQuote h2, #quote h2{
+        font-size: 13px;
+    }
+    .desc{
+        position: relative;
+        padding-bottom: 15px;
+        overflow-y: scroll;
+    }
+    #eQuote{
+        position: absolute;
+        display: block;
+    }
+    #graph{
+        background-color: blue;
+        display: inline;
+    }
+    #player{
+        height: 100px;
+        width: 300px;
+    }
+    #quote{
+        position: inherit;
+        margin-left: 180px;
+        margin-bottom: initial;
+        display: inline-block;
+        margin-top: initial;
+    }
+    ul li{
+        padding-left: 7px;
+        padding-right: 7px;
+    }
+}
+    @media only screen and (min-width: 376px) and (max-width: 414px){
+        .titlePic{
+            display: block;
+            height: 100px;
+        }
+        .profile{
+            padding-top: 10px;
+        }
+        .profile p{
+            margin-top: initial;
+        }
+        #eQuote, #quote{
+            width: 150px;
+            height: 130px; 
+            margin-top: 15px;
+        }
+        #eQuote h2, #quote h2{
+            font-size: 13px;
+        }
+        .desc{
+            position: relative;
+            padding-bottom: 15px;
+        }
+        #eQuote{
+            position: absolute;
+            display: block;
+        }
+        #quote{
+            position: inherit;
+            margin-left: 250px;
+            margin-bottom: initial;
+            display: inline-block;
+            margin-top: initial;
+        }
+        ul li{
+            padding-left: 7px;
+            padding-right: 7px;
+        }
+    }
+}
